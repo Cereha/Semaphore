@@ -1,6 +1,3 @@
-﻿using System;
-using System.Threading;
-
 namespace Labo3
 {
     public class Sem
