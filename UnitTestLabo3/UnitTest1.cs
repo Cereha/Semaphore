@@ -1,4 +1,4 @@
-﻿using Labo3;
+using Labo3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading;
@@ -11,7 +11,7 @@ namespace UnitTestLabo3
         [TestMethod]
         public void TestMethod1()
         {
-            Semaphore _semaphore = new Semaphore(3, 3, "LAB3._3");
+            Semaphore _semaphore = new Semaphore(3, 3, "Labo3");
             var a =new Sem();
             int x;
             if (_semaphore.WaitOne(1000))
