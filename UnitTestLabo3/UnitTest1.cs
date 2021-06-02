@@ -1,4 +1,4 @@
-﻿using Labo3;
+using Labo3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestLabo3
