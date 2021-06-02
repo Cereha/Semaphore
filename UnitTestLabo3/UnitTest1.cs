@@ -1,7 +1,5 @@
 ﻿using Labo3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Threading;
 
 namespace UnitTestLabo3
 {
@@ -11,26 +9,18 @@ namespace UnitTestLabo3
         [TestMethod]
         public void TestMethod1()
         {
-            Semaphore _semaphore = new Semaphore(3, 3, "LAB3._3");
-            var a =new Sem();
-            int x;
-            if (_semaphore.WaitOne(1000))
-            {
-                x = a.True();
-                Console.WriteLine("IM Alive");
-                Console.WriteLine("Press any key");
-                Console.ReadKey();
-                _semaphore.Release();
-                _semaphore.Dispose();
-            }
-            else
-            {
-                x = a.False();
-                Console.WriteLine("Cannot obtain semaphore");
-            }
-
-             
-            Assert.AreEqual( x , 0 );
+            var test = new Program();
+            Assert.AreEqual( test.Main() , 0 );
+        }
+        public void TestMethod2()
+        {
+            var test2 = new Program();
+            Assert.AreEqual(test2.Main(), 0);
+        }
+        public void TestMethod3()
+        {
+            var test3 = new Program();
+            Assert.AreEqual(test3.Main(), 0);
         }
     }
 }

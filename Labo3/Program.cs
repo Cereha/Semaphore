@@ -1,15 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Labo3
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static Semaphore _semaphore = new Semaphore(3, 3, "Labo3");
+        public  int Main()
         {
+            if (_semaphore.WaitOne(1000))
+            {
+                Console.WriteLine("IM Alive");
+                Console.WriteLine("Press any key");
+                Console.ReadKey();
+                _semaphore.Release();
+                _semaphore.Dispose();
+                return 0;
+            }
+            else
+            {
+                Console.WriteLine("Cannot obtain semaphore");
+                return -1;
+            }
         }
     }
 }
