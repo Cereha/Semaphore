@@ -8,7 +8,6 @@ namespace Labo3
         public static Semaphore _semaphore = new Semaphore(3, 3, "Labo3");
         public static int Main()
         {
-            Thread.Sleep(20000);
             if (_semaphore.WaitOne(1000))
             {
                 Console.WriteLine("IM Alive");
@@ -25,6 +24,7 @@ namespace Labo3
         }
         public static void Busy()
         {
+            Thread.Sleep(20000);
             if (_semaphore.WaitOne(1000))
             {
                 _semaphore.Release();
