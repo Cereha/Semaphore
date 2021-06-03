@@ -16,8 +16,9 @@ namespace UnitTestLabo3
         [TestMethod]
         public void TestMethod2()
         {
-            Thread TestThread = new Thread(Program.Busy);
-            TestThread.Start();
+            
+                Thread TestThread = new Thread(Program.Busy);
+                TestThread.Start();
             Thread TestThread2 = new Thread(Program.Busy);
             TestThread2.Start();
             Thread TestThread3 = new Thread(Program.Busy);
