@@ -16,8 +16,10 @@ namespace UnitTestLabo3
         [TestMethod]
         public void TestMethod2()
         {
-            Thread TestThread;
-            TestThread = new Thread(new ThreadStart(Program.Busy));
+            while (Program.Main() != -1) {
+                Thread TestThread;
+                TestThread = new Thread(new ThreadStart(Program.Busy));
+            }
             Assert.AreEqual(Program.Main(), -1);
         }
     }
