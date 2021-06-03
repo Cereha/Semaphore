@@ -13,6 +13,7 @@ namespace Labo3
                 Console.WriteLine("IM Alive");
                 Console.WriteLine("Press any key");
                 _semaphore.Release();
+                Thread.Sleep(20000);
                 _semaphore.Dispose();
                 return 0;
             }
@@ -24,16 +25,16 @@ namespace Labo3
         }
         public static void Busy()
         {
-            Thread.Sleep(20000);
+            
             if (_semaphore.WaitOne(1000))
             {
                 _semaphore.Release();
+                Thread.Sleep(20000);
             }
             else
             {
                 Console.WriteLine("Cannot obtain semaphore");
             }
         }
-    }
-           
+    }           
 }
