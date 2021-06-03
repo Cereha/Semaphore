@@ -11,15 +11,19 @@ namespace UnitTestLabo3
         public void TestMethod1()
         {
             Thread.Sleep(2000);
-            Assert.AreEqual(Program.Main() , 0 );
+            Assert.AreEqual(Program.Main(), 0);
         }
         [TestMethod]
         public void TestMethod2()
         {
-            while (Program.Main() != -1) {
-                Thread TestThread;
-                TestThread = new Thread(new ThreadStart(Program.Busy));
-            }
+            Thread TestThread = new Thread(Program.Busy);
+            TestThread.Start();
+            Thread TestThread2 = new Thread(Program.Busy);
+            TestThread2.Start();
+            Thread TestThread3 = new Thread(Program.Busy);
+            TestThread3.Start();
+            Thread TestThread4 = new Thread(Program.Busy);
+            TestThread4.Start();
             Assert.AreEqual(Program.Main(), -1);
         }
     }

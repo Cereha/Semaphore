@@ -26,10 +26,8 @@ namespace Labo3
         {
             if (_semaphore.WaitOne(1000))
             {
-                Console.WriteLine("IM Alive");
-                Console.WriteLine("Press any key");
                 _semaphore.Release();
-                _semaphore.Dispose();   
+                   
             }
             else
             {
