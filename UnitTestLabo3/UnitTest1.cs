@@ -1,5 +1,6 @@
 using Labo3;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading;
 
 namespace UnitTestLabo3
 {
@@ -9,18 +10,9 @@ namespace UnitTestLabo3
         [TestMethod]
         public void TestMethod1()
         {
-            var test = new Program();
-            Assert.AreEqual( test.Main() , 0 );
-        }
-        public void TestMethod2()
-        {
-            var test2 = new Program();
-            Assert.AreEqual(test2.Main(), 0);
-        }
-        public void TestMethod3()
-        {
-            var test3 = new Program();
-            Assert.AreEqual(test3.Main(), 0);
+            Thread.Sleep(2000);
+            Thread.Sleep(2000);
+            Assert.AreEqual(Program.Main() , 0 );
         }
     }
 }
